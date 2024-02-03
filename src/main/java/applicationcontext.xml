@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- <bean id="s" class="com.hibernate.SpringApplication.Student"> <property 
+		name="name" value="Ganesh"></property> <property name="age" value="24"></property> 
+		<property name="city" value="Pune, Maharashtra"></property> </bean> -->
+
+	<!-- <bean id="s" class="com.hibernate.SpringApplication.Employee"> <property 
+		name="city" value="Pune"></property> </bean> -->
+
+	<!-- <bean id="s" class="com.hibernate.SpringApplication.Test"> <constructor-arg 
+		index="0" value="Ganesh"></constructor-arg> <constructor-arg index="1" value="24"></constructor-arg> 
+		<constructor-arg index="2" value="Baramati"></constructor-arg> </bean> -->
+
+	<!-- <bean id="a" class="com.hibernate.SpringApplication.A" depends-on="b"></bean> 
+		<bean id="b" class="com.hibernate.SpringApplication.B" depends-on="c"></bean> 
+		<bean id="c" class="com.hibernate.SpringApplication.C"></bean> -->
+
+	<!-- <bean id="a" class="com.hibernate.SpringApplication.Address" dependency-check="all"> 
+		<property name="addressLine" value="Paud road, Kothrud"></property> </bean> 
+		<bean id="e" class="com.hibernate.SpringApplication.Employer" dependency-check="none"> 
+		<property name="firstName" value="Ganesh"></property> <property name="address" 
+		ref="a"></property> </bean> -->
+
+	<bean id="a" class="com.hibernate.SpringApplication.Address">
+		<property name="addressLine" value="Paud road, Kothrud"></property>
+	</bean>
+
+	<bean id="e" class="com.hibernate.SpringApplication.Employer">
+		<property name="firstName" value="Ganesh"></property>
+		<property name="address" ref="a"></property>
+	</bean>
+
+
+</beans>
